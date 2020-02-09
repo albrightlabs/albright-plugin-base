@@ -1,0 +1,17 @@
+/* Login */
+body.signin .horizontal-form.october {
+    display: block !important;
+}
+body.signin .horizontal-form.october .form-control {
+    margin-bottom: 15px !important;
+    display: block !important;
+    width: 100% !important;
+    color: #111 !important;
+}
+body.signin .layout-head .layout-cell,
+body.signin .layout > .layout-row.layout-head > .layout-cell::after {
+    display: none !important;
+}
+body.signin {
+    background: #222222;
+}

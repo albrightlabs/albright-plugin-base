@@ -1,0 +1,73 @@
+/*****
+ * Sidenav
+*****/
+.layout-cell.layout-sidenav-container {
+  display: none !important;
+  visibility: hidden !important;
+}
+.svg-replace {
+  display: none !important;
+  visibility: hidden !important;
+}
+.layout-sidenav .toolbar-primary {
+	padding-left: 15px;
+	padding-right: 15px !important;
+}
+.layout-sidenav ul li {
+    display: inline-block !important;
+    margin-right: -5px !important;
+}
+.layout-sidenav.control-toolbar {
+	font-size: 14px !important;
+	padding: 0 !important;
+}
+.layout-sidenav ul li a {
+	color: rgba(255,255,255,0.6) !important;
+}
+.layout-sidenav ul li.active a {
+	color: rgba(255,255,255,1) !important;
+	padding: 10px 15px 8px 10px !important;
+	font-weight: 600 !important;
+}
+.layout-sidenav ul li a:hover,
+.layout-sidenav ul li a:focus {
+	background: transparent !important;
+	color: rgba(255,255,255,1) !important;
+}
+.layout-sidenav ul li a {
+	padding: 12px 15px 12px 10px !important;
+}
+.layout-sidenav ul li:first-of-type a {
+	padding: 12px 15px 12px 8px !important;
+}
+.layout-sidenav ul li a .svg-icon {
+	height: 20px !important;
+	vertical-align: top !important;
+	margin: -1px 4px 0 0 !important;
+
+	-webkit-filter: grayscale(100%) !important;
+	filter: grayscale(100%) !important;
+	opacity: 0.6 !important;
+	filter: alpha(opacity=60)
+}
+.layout-sidenav ul li.active a .svg-icon,
+.layout-sidenav ul li a:hover .svg-icon,
+.layout-sidenav ul li a:focus .svg-icon {
+	-webkit-filter: none !important;
+	filter: none !important;
+	opacity: 1 !important;
+	filter: none !important;
+}
+.layout-sidenav .nav-icon i {
+	font-size: 19px !important;
+	padding-right: 5px !important;
+}
+.layout-sidenav .nav-label {
+	position: relative !important;
+	top: -2px !important;
+}
+#layout-sidenav .nav-label {
+}
+nav#layout-mainmenu.navbar-mode-inline ul.mainmenu-nav li.active {
+	font-weight: 600 !important;
+}
