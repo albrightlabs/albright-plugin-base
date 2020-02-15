@@ -1,6 +1,5 @@
 # Albright Labs Base
-### OctoberCMS Plugin
 
 A simple OctoberCMS Plugin that provides base functionality to Albright Labs applications.
 
-Install from project root by cloning into `plugins/albright/base`.
+Install by running `git clone https://github.com/joebuonocore/albright-plugin.git plugins/albright/base` from project root.
