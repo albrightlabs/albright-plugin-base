@@ -294,3 +294,7 @@ body.outer .layout >.layout-row >.layout-cell .outer-form-container .horizontal-
 .fancy-layout .form-tabless-fields {position:relative;background:#3498db;padding:18px 23px 0 23px;-webkit-transition:all 0.5s;transition:all 0.5s}
 .fancy-layout .form-tabless-fields .loading-indicator-container .loading-indicator {background-color:#3498db;padding:0 0 0 30px;color:rgba(255,255,255,0.5);margin-top:1px;height:90%;font-size:12px;line-height:100%}
 .fancy-layout .field-richeditor {border:none;border-left:1px solid #e0e0e0 !important}
+.btn-danger.disabled, .btn-danger[disabled], .btn-danger.disabled:hover {border-color:#656d79}
+
+/* Font Weights */
+.font-weight-bold { font-weight: 600; }
