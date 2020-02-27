@@ -302,7 +302,11 @@ body.outer .layout >.layout-row >.layout-cell .outer-form-container .horizontal-
 /* Text Colors */
 table.table.data tbody tr.positive td, table.table.data tbody tr.positive th, table.table.data tbody tr.positive td a, table.table.data tbody tr.positive th a {color: #2ecc71;}
 table.table.data tbody tr.negative td, table.table.data tbody tr.negative th, table.table.data tbody tr.negative td a, table.table.data tbody tr.negative th a {color: #e74c3c;}
+.text-info {color:#3498db;}
 .text-warning {color:#f1c40f;}
+.text-success {color:#2ecc71;}
+.text-danger {color:#e74c3c;}
+.text-muted {color:#95a5a6;}
 
 /* Settings Navigation */
 .sidenav-tree ul.top-level > li > div.group h3 {background: rgba(0,0,0,0.35);}
@@ -313,3 +317,6 @@ table.table.data tbody tr.negative td, table.table.data tbody tr.negative th, ta
 
 /* Tabs */
 .control-tabs > ul.nav-tabs > li a > span.title > span, .control-tabs > div > ul.nav-tabs > li a > span.title > span, .control-tabs > div > div > ul.nav-tabs > li a > span.title > span { font-weight:600; }
+
+/* Text Transforms */
+.text-capitalize {text-transform: capitalize;}
