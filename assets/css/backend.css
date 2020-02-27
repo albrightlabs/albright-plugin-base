@@ -299,9 +299,16 @@ body.outer .layout >.layout-row >.layout-cell .outer-form-container .horizontal-
 /* Font Weights */
 .font-weight-bold { font-weight: 600; }
 
-/* Text colors */
+/* Text Colors */
 table.table.data tbody tr.positive td, table.table.data tbody tr.positive th, table.table.data tbody tr.positive td a, table.table.data tbody tr.positive th a {color: #2ecc71;}
 table.table.data tbody tr.negative td, table.table.data tbody tr.negative th, table.table.data tbody tr.negative td a, table.table.data tbody tr.negative th a {color: #e74c3c;}
 
-/* Settings navigation */
+/* Settings Navigation */
 .sidenav-tree ul.top-level > li > div.group h3 {background: rgba(0,0,0,0.35);}
+
+/* Form Labels */
+.form-group > label, .form-group > .field-section > h4 {font-weight:600;}
+.form-group > .field-section > h4 {color: #222; font-size:16px;}
+
+/* Tabs */
+.control-tabs > ul.nav-tabs > li a > span.title > span, .control-tabs > div > ul.nav-tabs > li a > span.title > span, .control-tabs > div > div > ul.nav-tabs > li a > span.title > span { font-weight:600; }
