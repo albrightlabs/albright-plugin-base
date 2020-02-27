@@ -302,6 +302,7 @@ body.outer .layout >.layout-row >.layout-cell .outer-form-container .horizontal-
 /* Text Colors */
 table.table.data tbody tr.positive td, table.table.data tbody tr.positive th, table.table.data tbody tr.positive td a, table.table.data tbody tr.positive th a {color: #2ecc71;}
 table.table.data tbody tr.negative td, table.table.data tbody tr.negative th, table.table.data tbody tr.negative td a, table.table.data tbody tr.negative th a {color: #e74c3c;}
+.text-warning {color:#f1c40f;}
 
 /* Settings Navigation */
 .sidenav-tree ul.top-level > li > div.group h3 {background: rgba(0,0,0,0.35);}
