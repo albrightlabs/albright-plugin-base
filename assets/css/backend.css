@@ -321,3 +321,9 @@ table.table.data tbody tr.negative td, table.table.data tbody tr.negative th, ta
 
 /* Text Transforms */
 .text-capitalize {text-transform: capitalize;}
+
+/* List Column Collase */
+.table.data th, .table.data td {
+  white-space: nowrap !important;
+}
+
