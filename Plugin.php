@@ -51,17 +51,21 @@ class Plugin extends PluginBase
         return;
       }
       Event::listen('backend.menu.extendItems', function($navigationManager) {
-        $navigationManager->removeMainMenuItem('October.Cms', 'cms');
+        // $navigationManager->removeMainMenuItem('October.Cms', 'cms');
         $navigationManager->removeMainMenuItem('October.Backend', 'media');
       });
       Event::listen('backend.page.beforeDisplay', function($controller, $action, $params) {
-        $controller->addCss('/plugins/albright/base/assets/css/backend.css');
-        if ($action == 'index' && $controller instanceof \Backend\Controllers\Index){
-          return Backend::redirect('albright/base/dashboard');
-        }
-        if (!$controller instanceof \RainLab\Pages\Controllers\Index && !$controller instanceof \Cms\Controllers\Index && !$controller instanceof \Cms\Controllers\Media){
-          $controller->addCss('/plugins/albright/base/assets/css/sidenav.css');
-          $controller->addJs('/plugins/albright/base/assets/js/scripts.js');
+        if (strpos($_SERVER['REQUEST_URI'], 'backend/cms') == false) {
+          $controller->addCss('/plugins/albright/base/assets/css/backend.css');
+          if ($action == 'index' && $controller instanceof \Backend\Controllers\Index){
+            return Backend::redirect('albright/base/dashboard');
+          }
+          if (!$controller instanceof \RainLab\Pages\Controllers\Index && !$controller instanceof \Cms\Controllers\Index && !$controller instanceof \Cms\Controllers\Media){
+            $controller->addCss('/plugins/albright/base/assets/css/sidenav.css');
+            $controller->addJs('/plugins/albright/base/assets/js/scripts.js');
+          }
+        } else {
+          $controller->addCss('/plugins/albright/base/assets/css/cms.css');
         }
       });
     }
