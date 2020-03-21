@@ -1,1 +1,4 @@
-.control-scrollpanel { background: #ebebeb !important; background-color: #ebebeb !important; }
+body { background: #fafafa !important; }
+.control-scrollpanel { background: #f5f5f5 !important; }
+.control-filelist ul li a:hover { background: #ededed !important; }
+/* .layout.control-tabs.oc-logo-transparent:not(.has-tabs)::after, .flex-layout-column.oc-logo-transparent:not(.has-tabs)::after, .layout-cell.oc-logo-transparent::after { background: transparent !important; } */
