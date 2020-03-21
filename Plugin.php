@@ -1,4 +1,4 @@
-<?php namespace Albright\Base;
+<?php namespace AlbrightLabs\Base;
 
 use App;
 use Event;
@@ -56,16 +56,16 @@ class Plugin extends PluginBase
       });
       Event::listen('backend.page.beforeDisplay', function($controller, $action, $params) {
         if (strpos($_SERVER['REQUEST_URI'], 'backend/cms') == false) {
-          $controller->addCss('/plugins/albright/base/assets/css/backend.css');
+          $controller->addCss('/plugins/albrightlabs/base/assets/css/backend.css');
           if ($action == 'index' && $controller instanceof \Backend\Controllers\Index){
-            return Backend::redirect('albright/base/dashboard');
+            return Backend::redirect('albrightlabs/base/dashboard');
           }
           if (!$controller instanceof \RainLab\Pages\Controllers\Index && !$controller instanceof \Cms\Controllers\Index && !$controller instanceof \Cms\Controllers\Media){
-            $controller->addCss('/plugins/albright/base/assets/css/sidenav.css');
-            $controller->addJs('/plugins/albright/base/assets/js/scripts.js');
+            $controller->addCss('/plugins/albrightlabs/base/assets/css/sidenav.css');
+            $controller->addJs('/plugins/albrightlabs/base/assets/js/scripts.js');
           }
         } else {
-          $controller->addCss('/plugins/albright/base/assets/css/cms.css');
+          $controller->addCss('/plugins/albrightlabs/base/assets/css/cms.css');
         }
       });
     }
@@ -80,7 +80,7 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'Albright\Base\Components\MyComponent' => 'myComponent',
+            'AlbrightLabs\Base\Components\MyComponent' => 'myComponent',
         ];
     }
 
@@ -94,7 +94,7 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'albright.base.some_permission' => [
+            'albrightlabs.base.some_permission' => [
                 'tab' => 'Base',
                 'label' => 'Some permission'
             ],
@@ -113,9 +113,9 @@ class Plugin extends PluginBase
         return [
             'base' => [
                 'label'       => 'Base',
-                'url'         => Backend::url('albright/base/mycontroller'),
+                'url'         => Backend::url('albrightlabs/base/mycontroller'),
                 'icon'        => 'icon-leaf',
-                'permissions' => ['albright.base.*'],
+                'permissions' => ['albrightlabs.base.*'],
                 'order'       => 500,
             ],
         ];

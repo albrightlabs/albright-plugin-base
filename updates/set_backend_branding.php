@@ -1,4 +1,4 @@
-<?php namespace Albright\Base\Updates;
+<?php namespace AlbrightLabs\Base\Updates;
 
 use Db;
 use October\Rain\Database\Updates\Migration;
