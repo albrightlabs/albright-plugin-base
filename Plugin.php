@@ -1,4 +1,4 @@
-<?php namespace AlbrightLabs\Base;
+<?php namespace Albrightlabs\Base;
 
 use App;
 use Event;
@@ -80,7 +80,7 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'AlbrightLabs\Base\Components\MyComponent' => 'myComponent',
+            'Albrightlabs\Base\Components\MyComponent' => 'myComponent',
         ];
     }
 

@@ -1,4 +1,4 @@
-<?php namespace AlbrightLabs\Base\Controllers;
+<?php namespace Albrightlabs\Base\Controllers;
 
 use BackendMenu;
 use Backend\Classes\Controller;
