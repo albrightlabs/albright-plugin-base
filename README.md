@@ -1,4 +1,4 @@
-# Albrightlabs Base Plugin
+# Albright Labs Base Plugin
 A simple October plugin that provides base functionality to Albright Labs applications.
 
 ## Install
