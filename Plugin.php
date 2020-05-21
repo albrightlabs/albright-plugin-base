@@ -50,16 +50,9 @@ class Plugin extends PluginBase
       if(!App::runningInBackend()){
         return;
       }
-      Event::listen('backend.menu.extendItems', function($navigationManager) {
-        // $navigationManager->removeMainMenuItem('October.Cms', 'cms');
-        $navigationManager->removeMainMenuItem('October.Backend', 'media');
-      });
       Event::listen('backend.page.beforeDisplay', function($controller, $action, $params) {
         if (strpos($_SERVER['REQUEST_URI'], 'backend/cms') == false) {
           $controller->addCss('/plugins/albrightlabs/brand/assets/css/backend.css');
-          if ($action == 'index' && $controller instanceof \Backend\Controllers\Index){
-            return Backend::redirect('albrightlabs/brand/dashboard');
-          }
           if (!$controller instanceof \RainLab\Pages\Controllers\Index && !$controller instanceof \Cms\Controllers\Index && !$controller instanceof \Cms\Controllers\Media){
             $controller->addCss('/plugins/albrightlabs/brand/assets/css/sidenav.css');
             $controller->addJs('/plugins/albrightlabs/brand/assets/js/scripts.js');
