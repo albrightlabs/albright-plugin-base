@@ -1,4 +1,4 @@
-# Albright Labs Base Plugin
+# Albright Labs Brand Plugin
 A simple October plugin that provides base functionality to Albright Labs applications.
 
 ## Install

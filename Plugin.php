@@ -1,14 +1,14 @@
-<?php namespace Albrightlabs\Base;
+<?php namespace Albrightlabs\Brand;
 
 use App;
 use Event;
 use Backend;
-use System\Classes\PluginBase;
+use System\Classes\PluginBrand;
 
 /**
- * Base Plugin Information File
+ * Brand Plugin Information File
  */
-class Plugin extends PluginBase
+class Plugin extends PluginBrand
 {
     /**
      * @var bool Plugin requires elevated permissions.
@@ -23,7 +23,7 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Base',
+            'name'        => 'Brand',
             'description' => 'Provides Albright Labs client features.',
             'author'      => 'Albright Labs',
             'icon'        => 'icon-star-o'
@@ -56,16 +56,16 @@ class Plugin extends PluginBase
       });
       Event::listen('backend.page.beforeDisplay', function($controller, $action, $params) {
         if (strpos($_SERVER['REQUEST_URI'], 'backend/cms') == false) {
-          $controller->addCss('/plugins/albrightlabs/base/assets/css/backend.css');
+          $controller->addCss('/plugins/albrightlabs/brand/assets/css/backend.css');
           if ($action == 'index' && $controller instanceof \Backend\Controllers\Index){
-            return Backend::redirect('albrightlabs/base/dashboard');
+            return Backend::redirect('albrightlabs/brand/dashboard');
           }
           if (!$controller instanceof \RainLab\Pages\Controllers\Index && !$controller instanceof \Cms\Controllers\Index && !$controller instanceof \Cms\Controllers\Media){
-            $controller->addCss('/plugins/albrightlabs/base/assets/css/sidenav.css');
-            $controller->addJs('/plugins/albrightlabs/base/assets/js/scripts.js');
+            $controller->addCss('/plugins/albrightlabs/brand/assets/css/sidenav.css');
+            $controller->addJs('/plugins/albrightlabs/brand/assets/js/scripts.js');
           }
         } else {
-          $controller->addCss('/plugins/albrightlabs/base/assets/css/cms.css');
+          $controller->addCss('/plugins/albrightlabs/brand/assets/css/cms.css');
         }
       });
     }
@@ -80,7 +80,7 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'Albrightlabs\Base\Components\MyComponent' => 'myComponent',
+            'Albrightlabs\Brand\Components\MyComponent' => 'myComponent',
         ];
     }
 
@@ -94,8 +94,8 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'albrightlabs.base.some_permission' => [
-                'tab' => 'Base',
+            'albrightlabs.brand.some_permission' => [
+                'tab' => 'Brand',
                 'label' => 'Some permission'
             ],
         ];
@@ -111,11 +111,11 @@ class Plugin extends PluginBase
         return []; // Remove this line to activate
 
         return [
-            'base' => [
-                'label'       => 'Base',
-                'url'         => Backend::url('albrightlabs/base/mycontroller'),
+            'brand' => [
+                'label'       => 'Brand',
+                'url'         => Backend::url('albrightlabs/brand/mycontroller'),
                 'icon'        => 'icon-leaf',
-                'permissions' => ['albrightlabs.base.*'],
+                'permissions' => ['albrightlabs.brand.*'],
                 'order'       => 500,
             ],
         ];
