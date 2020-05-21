@@ -8,7 +8,7 @@ use System\Classes\PluginBrand;
 /**
  * Brand Plugin Information File
  */
-class Plugin extends PluginBrand
+class Plugin extends PluginBase
 {
     /**
      * @var bool Plugin requires elevated permissions.
