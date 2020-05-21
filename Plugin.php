@@ -3,7 +3,7 @@
 use App;
 use Event;
 use Backend;
-use System\Classes\PluginBrand;
+use System\Classes\PluginBase;
 
 /**
  * Brand Plugin Information File
