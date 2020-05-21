@@ -3,6 +3,7 @@
 use App;
 use Event;
 use Backend;
+use Backend\Models\BrandSetting as Settings;
 use System\Classes\PluginBase;
 
 /**
@@ -53,7 +54,12 @@ class Plugin extends PluginBase
       Event::listen('backend.page.beforeDisplay', function($controller, $action, $params) {
         if (strpos($_SERVER['REQUEST_URI'], 'backend/cms') == false) {
           $controller->addCss('/plugins/albrightlabs/brand/assets/css/backend.css');
-          if (!$controller instanceof \RainLab\Pages\Controllers\Index && !$controller instanceof \Cms\Controllers\Index && !$controller instanceof \Cms\Controllers\Media){
+          if (
+                !$controller instanceof \RainLab\Pages\Controllers\Index &&
+                !$controller instanceof \Cms\Controllers\Index &&
+                !$controller instanceof \Cms\Controllers\Media &&
+                Settings::get('sidenav_mode') == 'top'
+            ){
             $controller->addCss('/plugins/albrightlabs/brand/assets/css/sidenav.css');
             $controller->addJs('/plugins/albrightlabs/brand/assets/js/scripts.js');
           }
@@ -61,56 +67,23 @@ class Plugin extends PluginBase
           $controller->addCss('/plugins/albrightlabs/brand/assets/css/cms.css');
         }
       });
-    }
 
-    /**
-     * Registers any front-end components implemented in this plugin.
-     *
-     * @return array
-     */
-    public function registerComponents()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'Albrightlabs\Brand\Components\MyComponent' => 'myComponent',
-        ];
-    }
-
-    /**
-     * Registers any back-end permissions used by this plugin.
-     *
-     * @return array
-     */
-    public function registerPermissions()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'albrightlabs.brand.some_permission' => [
-                'tab' => 'Brand',
-                'label' => 'Some permission'
-            ],
-        ];
-    }
-
-    /**
-     * Registers back-end navigation items for this plugin.
-     *
-     * @return array
-     */
-    public function registerNavigation()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'brand' => [
-                'label'       => 'Brand',
-                'url'         => Backend::url('albrightlabs/brand/mycontroller'),
-                'icon'        => 'icon-leaf',
-                'permissions' => ['albrightlabs.brand.*'],
-                'order'       => 500,
-            ],
-        ];
+      // Extend all backend form usage for AlbrightLabs.Note note model
+      Event::listen('backend.form.extendFields', function($widget) {
+          if (!$widget->model instanceof \Backend\Models\BrandSetting) {
+              return;
+          }
+          $widget->addTabFields([
+              'sidenav_mode' => [
+                  'label' => 'Sidenav Mode',
+                  'tab' => 'backend::lang.branding.navigation',
+                  'type' => 'radio',
+                  'options' => [
+                      'side' => 'Side',
+                      'top' => 'Top',
+                  ],
+              ],
+          ]);
+      });
     }
 }
